@@ -17,6 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * Router Setup
  * --------------------------------------------------------------------
  */
+// $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
@@ -32,7 +33,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+// $routes->get('/', 'Home::index');
 
 /*
  * --------------------------------------------------------------------
@@ -57,8 +58,8 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
  * Include Modules Routes Files
  * --------------------------------------------------------------------
  */
-if (file_exists(ROOTPATH.'modules')) {
-	$modulesPath = ROOTPATH.'modules/';
+if (file_exists(ROOTPATH.'Modules')) {
+	$modulesPath = ROOTPATH.'Modules/';
 	$modules = scandir($modulesPath);
 
 	foreach ($modules as $module) {
